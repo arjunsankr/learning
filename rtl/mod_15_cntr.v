@@ -11,7 +11,7 @@ module counter
     if (!rstn) begin
       count <= 0;
     end else begin
-      if (count == 16)
+      if (count == 15)
         count <= 0;
       else
         count <= count + 1;
