@@ -1,18 +1,18 @@
-module negedge_pulse(input 
+module falling_edge_detect(input 
                      clk,
                      input rstn,
                      input in0,
-                     output reg op0);
+                     output reg o_p);
   
-  reg o1;
+  reg in0_1d;
   
   always @(posedge clk)
     begin
       if(!rstn)
-        o1<=0;
+        in0_1d<=0;
       else begin
-        o1<=in0;
-        op0<=~in0&o1;
+        in0_1d<=in0;
+        o_p<=~in0&in0_id;
       end
     end  
 endmodule
