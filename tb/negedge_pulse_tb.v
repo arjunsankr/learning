@@ -5,7 +5,7 @@ module falling_edge_detect_tb;
   wire o_p;
   
   
-  flling_edge_detect dut(clk,rstn,in0,op0);
+  falling_edge_detect dut(clk,rstn,in0,op0);
   always #5 clk=~clk;
   
   initial begin
