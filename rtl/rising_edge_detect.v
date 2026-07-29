@@ -1,4 +1,4 @@
-module posedge_pulse(input 
+module rising_edge_detect(input 
                      clk,
                      input rstn,
                      input in0,
