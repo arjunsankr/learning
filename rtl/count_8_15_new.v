@@ -1,4 +1,4 @@
-module counter
+module count_8_15
   ( input   clk,
    input rstn,
    output out_8_15,
