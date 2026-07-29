@@ -2,7 +2,7 @@ module posedge_pulse_tb;
   reg clk;
   reg rstn;
   reg in0;
-  wire op0;
+  wire o_p;
   
   
   negedge_pulse dut(clk,rstn,in0,op0);
