@@ -14,7 +14,7 @@ module dmux_256(input [31:0]in,
     else begin
       if(in_vld)begin
         out_vld<=onehot_sel;
-        case(onehot_sel) begin
+        case(onehot_sel) 
           8'b00000001:dmux_out[31:0]=in;
           8'b00000010:dmux_out[63:32]=in;
           8'b00000100:dmux_out[95:64]=in;
