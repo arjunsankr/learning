@@ -58,6 +58,6 @@ end
 
 // output logic
 
-assign detect = (p_state == 2'b11 && in == 1'b1);
+assign detect = (p_state == 2'b11 && in);
 
 endmodule
