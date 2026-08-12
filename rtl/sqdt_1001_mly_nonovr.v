@@ -7,6 +7,7 @@ module sqdt_1001_mly_nonovr(
 
 reg [1:0] n_state, p_state;
 
+parameter [1:0] S0 = 2'b00, S1 = 2'b01, S2 = 2'b10, S3 = 2'b11
 // current state logic
 
 always @(posedge clk or negedge rstn) begin
@@ -23,41 +24,41 @@ always @(*) begin
 
     case(p_state)
 
-        2'b00: begin
+        S0: begin
             if(in)
-                n_state = 2'b01;
+                n_state = S1;
             else
-                n_state = 2'b00;
+                n_state = S0;
         end
 
-        2'b01: begin
+        S1: begin
             if(in)
-                n_state = 2'b01;
+                n_state = S1;
             else
-                n_state = 2'b10;
+                n_state = S2;
         end
 
-        2'b10: begin
+        S2: begin
             if(in)
-                n_state = 2'b11;
+                n_state = S3;
             else
-                n_state = 2'b00;
+                n_state = ;
         end
 
-        2'b11: begin
+        S3: begin
             if(in)
-                n_state = 2'b00;   // non-overlapping
+                n_state = S0;   // non-overlapping
             else
-                n_state = 2'b00;
+                n_state = S0;
         end
 
-        default: n_state = 2'b00;
+        default: n_state = S0;
 
     endcase
 end
 
 // output logic
 
-assign detect = (p_state == 2'b11 && in);
+    assign detect = (p_state == S3 && in);
 
 endmodule
