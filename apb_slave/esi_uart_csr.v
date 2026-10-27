@@ -29,7 +29,7 @@ module uart_csr (
     output reg [31:0] PRDATA,
     output        PREADY,
 
-    input         hw_tx_empty,
+    /*input         hw_tx_empty,
     input         hw_tx_full,
     input         hw_tx_overrun,
     input         hw_rx_empty,
@@ -43,7 +43,7 @@ module uart_csr (
     input         hw_rx_timeout,
     input         hw_tx_almost_empty,
     input         hw_rx_almost_full,
-    
+    */
     output [31:0] ctrl_reg_out
 );
 
