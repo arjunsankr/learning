@@ -1,6 +1,6 @@
 `define ADDR_CTRL         6'h0c  
 `define ADDR_STATUS       6'h08  
-`define ADDR_DATA         6'h00  
+`define ADDR_tx_data        6'h00  
 
 `define TXE    0   
 `define TXF    1   
@@ -92,7 +92,7 @@ module uart_csr (
             status_reg[`RT]   <= hw_rx_timeout;
             status_reg[`TXAE] <= hw_tx_almost_empty;
             status_reg[`RXAF] <= hw_rx_almost_full;
-
+/*
             // Write-1-to-Clear (W1C) Error Management
             if (hw_tx_overrun)
                 status_reg[`TXO] <= 1'b1;
@@ -120,5 +120,5 @@ module uart_csr (
                 status_reg[`PE] <= 1'b0;
         end
     end
-
+*/
 endmodule
