@@ -1,0 +1,33 @@
+`define control         8'h0c  
+`define status       8'h08  
+`define tx_data        8'h00  
+`define rx_data        8'h04
+`define cycles_per_bit 8'h10
+`define retries 8'h14
+`define txae_thresh 8'h18
+`define rxaf_thresh 8'h1c
+`define tx_error_start 8'h20
+`define tx_error_length 8'h24
+`define rx_error_start 8'h28
+`define rx_error_length 8'h2c
+`define tx_count 8'h30
+`define rx_count 8'h34
+`define tx_guard 8'h38
+`define rx_timeout 8'h3c
+`define rx_timeout_cnt 8'h40
+
+`define TXE    0   
+`define TXF    1   
+`define TXO    2   
+`define RXE    3   
+`define RXF    4
+`define RXO    5
+`define RXP    6
+`define RXB    7
+`define FE     8   
+`define PE     9   
+`define RLR    10  
+`define RT     11  
+`define TXAE   14  
+`define RXAF   15  
+
