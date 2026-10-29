@@ -1,23 +1,3 @@
-`define ADDR_CTRL         6'h0c  
-`define ADDR_STATUS       6'h08  
-`define ADDR_tx_data        6'h00  
-
-`define TXE    0   
-`define TXF    1   
-`define TXO    2   
-`define RXE    3   
-`define RXF    4
-`define RXO    5
-`define RXP    6
-`define RXB    7
-`define FE     8   
-`define PE     9   
-`define RLR    10  
-`define RT     11  
-`define TXAE   14  
-`define RXAF   15  
-
-
 module uart_csr (
     input         PCLK,
     input         PRESETn,
@@ -29,7 +9,7 @@ module uart_csr (
     output reg [31:0] PRDATA,
     output        PREADY,
 
-    /*input         hw_tx_empty,
+    input         hw_tx_empty,
     input         hw_tx_full,
     input         hw_tx_overrun,
     input         hw_rx_empty,
@@ -92,7 +72,7 @@ module uart_csr (
             status_reg[`RT]   <= hw_rx_timeout;
             status_reg[`TXAE] <= hw_tx_almost_empty;
             status_reg[`RXAF] <= hw_rx_almost_full;
-/*
+
             // Write-1-to-Clear (W1C) Error Management
             if (hw_tx_overrun)
                 status_reg[`TXO] <= 1'b1;
