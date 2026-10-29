@@ -29,5 +29,5 @@
 `define RLR    10  
 `define RT     11  
 `define TXAE   14  
-`define RXAF   15  
+`define RXAF   15
 
