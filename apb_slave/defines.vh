@@ -16,6 +16,7 @@
 `define rx_timeout 8'h3c
 `define rx_timeout_cnt 8'h40
 
+//status reg flags
 `define TXE    0   
 `define TXF    1   
 `define TXO    2   
@@ -30,4 +31,20 @@
 `define RT     11  
 `define TXAE   14  
 `define RXAF   15
+
+//control reg flags
+`define E 0
+`define SB 1
+`define DB 2
+`define PB 5:3
+`define FC 6
+`define TXB 7
+`define TXIE 8 
+`define RXIE 9
+`define RXBIE 10
+`define RLRIE 11
+`define END 12
+`define RF 13
+`define RTIE14
+`define D 15
 
