@@ -1,14 +1,14 @@
+`include "defines.vh"
 module uart_csr (
+    //inputs from apb_master
     input         PCLK,
     input         PRESETn,
     input         PSEL,
     input         PENABLE,
     input         PWRITE,
-    input  [5:0]  PADDR,
+    input  [7:0]  PADDR,
     input  [31:0] PWDATA,
-    output reg [31:0] PRDATA,
-    output        PREADY,
-
+    //hw inputs
     input         hw_tx_empty,
     input         hw_tx_full,
     input         hw_tx_overrun,
@@ -23,8 +23,10 @@ module uart_csr (
     input         hw_rx_timeout,
     input         hw_tx_almost_empty,
     input         hw_rx_almost_full,
-    */
-    output [31:0] ctrl_reg_out
+    //outputs
+    output IRQ
+    output reg [31:0] PRDATA,
+    output        PREADY    
 );
 
     reg [31:0] ctrl_reg;
@@ -36,7 +38,7 @@ module uart_csr (
     wire apb_write = PSEL && PENABLE && PWRITE;
     wire apb_read  = PSEL && !PWRITE;
 
-    assign ctrl_reg_out = ctrl_reg;
+    assign dout = ctrl_reg;
 
     always @(*) begin
         if (apb_read) begin
